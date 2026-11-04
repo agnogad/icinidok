@@ -1,0 +1,21 @@
+# dependencies
+node_modules/
+
+# build output
+apps/web/.next/
+apps/web/out/
+services/api/data/
+
+# local environment and databases
+.env
+*.db
+*.db-shm
+*.db-wal
+
+# go binaries
+services/api/server
+services/api/api
+
+# OS / editor noise
+.DS_Store
+*.log

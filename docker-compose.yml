@@ -1,0 +1,20 @@
+services:
+  api:
+    build:
+      context: .
+    image: icinidok:local
+    environment:
+      ADDR: ":8080"
+      DB_PATH: /data/icinidok.db
+      WEB_DIR: /app/web
+      APP_ORIGIN: ${APP_ORIGIN:-http://localhost:8080}
+      COOKIE_SECURE: ${COOKIE_SECURE:-false}
+      TRUST_PROXY: "false"
+    volumes:
+      - icinidok-data:/data
+    ports:
+      - "${PORT:-8080}:8080"
+    restart: unless-stopped
+
+volumes:
+  icinidok-data:
